@@ -40,7 +40,7 @@ header .nav_title {
 header .nav_title a {
     font-size: 20px;
     margin: 40px;
-    color: black;
+    color: #ffffff;
 }
 
 header .nav_title .item {
@@ -117,6 +117,7 @@ h3 {
 #banner .w>.bgs div:nth-child(2){
     background: url("../images/banner2.png") no-repeat;
     background-size: cover;
+    height: 800px;
 }
 
 #banner .w>.bgs div{
@@ -164,6 +165,27 @@ h3 {
 #banner .w:hover .left,
 #banner .w:hover .right{
     opacity: 1;
+}
+
+#banner ul{
+    display: flex;
+    background-color: rgba(0,0,0,.4);
+    position: absolute;
+    border-radius: 30px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+#banner ul li{
+    margin: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+}
+#banner .item{
+    background-color: #fff;
 }
 /* 学校 */
 #history {
