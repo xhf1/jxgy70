@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function() {
     // 切换
     let ulbutton=document.querySelectorAll("#banner ul li")
     // 图片路径数组
-    let imges = ["../images/banner1.png", "../images/banner2.png"];
+    let imges = ["images/banner1.png", "images/banner2.png"];
     // 初始化背景图片
     bgimgs.forEach((div, index) => {
         div.style.backgroundImage = `url(${imges[index]})`;
