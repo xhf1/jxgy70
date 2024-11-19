@@ -1,0 +1,354 @@
+/*通用部分*/
+* {
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.w {
+    margin: 0 auto;
+    width: 1300px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    box-shadow: 0 3px 6px;
+    background-color: #922221;
+}
+header img{
+    width: 200px;
+    display: block;
+}
+header>section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .nav_title{
+    display: flex;
+}
+header .nav_title a{
+    font-size: 20px;
+    margin: 40px;
+    color: black;
+}
+header .nav_title .item{
+    color: #ffffff;
+}
+/*尾部*/
+footer{
+    color: #ffffff;
+    border-radius: 25% 25% 0 0;
+    background: #862e28;
+    font-weight: bold;
+}
+footer .con{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .con>img{
+    opacity: 0.2;
+    margin: 0 50px;
+}
+footer .end{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border-top: 10px solid #4e3434;
+}
+footer .end h2{
+    margin: 10px 0;
+}
+.con_tit{
+
+    display: flex;
+}
+.con_tit>div{
+    margin: 0 50px;
+}
+.con_tit P{
+    margin: 20px 0;
+}
+h3{
+    margin: 10px 0;
+}
+/*轮播图*/
+#banner{
+    background-color: #f4f4f4;
+}
+#banner>.w{
+    margin: 0 auto;
+}
+#banner>div {
+    overflow: hidden;
+}
+
+#banner .banner_box {
+    width: 300%;
+    height: 700px;
+    display: flex;
+    animation: banner linear 20s infinite;
+}
+
+#banner .banner_box div:nth-child(1) {
+    flex: 1;
+    background: url("../images/banner1.png")no-repeat bottom center;
+    background-size: cover;
+}
+
+#banner .banner_box div:nth-child(2) {
+    flex: 1;
+    background: url("../images/banner2.png")no-repeat center;
+    background-size: cover;
+}
+
+#banner .banner_box div:nth-child(3) {
+    flex: 1;
+    background: url("../images/banner1.png")no-repeat bottom center;
+    background-size: cover;
+}
+
+/* 轮播图动画 */
+@keyframes banner {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-1300px);
+    }
+
+    75% {
+        transform: translateX(-1300px);
+    }
+
+    100% {
+        transform: translateX(-2600px);
+    }
+}
+
+/* 学校 */
+#history{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    color: black;
+}
+#history>div {
+    display: flex;
+    margin: 10px 0;
+}
+#history .img {
+    flex: 1;
+    overflow: hidden;
+}
+
+#history img {
+    width: 100%;
+    border: 20px solid #4e3434;
+    transition: all 1s;
+}
+
+#history .bottom img {
+    border: 20px solid #a18989;
+}
+
+#history img:hover {
+    transform: scale(1.2);
+}
+
+#history .title {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    line-height: 40px;
+}
+
+#history .title span:last-child {
+    padding: 0 10px;
+    font-size: 20px;
+    text-indent: 2em;
+}
+
+/*历史进程*/
+#course{
+    padding: 20px;
+}
+#course .title{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.tit{
+    font-size: 30px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 30px;
+}
+
+section .tit{
+    color: #ffffff;
+    padding: 10px 20px;
+    background-color: #c1110b;
+}
+#course p{
+    cursor: pointer;
+    padding: 20px;
+    background-color: #c1110b;
+    font-size: 30px;
+    color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 5px 3px #403e3e;
+}
+#course p::after{
+    content: "+";
+    float: right;
+}
+#course .tabs>div{
+    padding: 15px;
+    font-size: 25px;
+    display: none;
+    background-color: #f4f4f4;
+}
+#course .tabs .item{
+    display: block;
+}
+
+/*办学成绩*/
+#achievement{
+    margin: 20px;
+}
+#achievement .title{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#achievement .title .imgs{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#achievement h3{
+    font-size: 30px;
+    padding: 10px 20px;
+    border-bottom: 4px solid #a58e22;
+}
+
+#achievement .title img{
+    width: 300px;
+    height: 200px;
+    transition: linear 0.3s;
+}
+#achievement .text{
+    display: flex;
+    justify-content: space-evenly;
+}
+#achievement .text>div{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+#achievement .text>div .texts{
+    text-align: center;
+   background-color: rgba(0,0,0,0.5);
+    width: 300px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+    transition:linear 0.3s;
+    opacity: 0;
+}
+
+#achievement .imgs>img:hover,
+#achievement .text>div:hover img
+{
+    transform: scale(1.05);
+}
+#achievement .text>div:hover .texts{
+    opacity: 1;
+}
+
+/*学院介绍*/
+#college{
+    padding: 20px 0;
+    background-color: #f4f4f4;
+}
+#college .tabs {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+#college .tabs>span{
+    margin: 0 20px;
+    font-size: 25px;
+}
+
+#college .tabs .item{
+    transition: linear .3s;
+    transform: scale(1.2);
+    color: #c1110b;
+}
+#college .tabs  .bord{
+    flex: 1;
+    height: 2px;
+    background-color: #c1110b;
+}
+#college .cons div{
+    padding: 10px;
+    font-size: 20px ;
+}
+#college .cons p{
+    text-indent: 2em;
+    font-size: 25px;
+    line-height: 50px;
+    color:#c1110b;
+}
+#college .cons>div{
+    display: none;
+}
+#college .cons .black{
+    display: block;
+}
+#college .title{
+    display: flex;
+    flex-direction: column;
+}
+
+#top{
+    width: 50px;
+    height: 50px;
+    background: #c1110b;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 15%;
+    right: 1%;
+    z-index: 999;
+    color: #ffffff;
+    display: none;
+}
