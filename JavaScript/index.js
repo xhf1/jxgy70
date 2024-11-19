@@ -17,6 +17,68 @@ window.addEventListener("DOMContentLoaded", function() {
     let linkAchievement = document.querySelector("#link-achievement");
     let linkCourse = document.querySelector("#link-course");
 
+    //实现轮播图
+    let bgimgs=document.querySelectorAll("#banner .bgs div")
+    // 两个按钮
+    let left = document.querySelector("#banner .left");
+    let right = document.querySelector("#banner .right");
+    // 切换
+    let ulbutton=document.querySelectorAll("#banner ul li")
+    // 图片路径数组
+    let imges = ["../images/banner1.png", "../images/banner2.png"];
+    // 初始化背景图片
+    bgimgs.forEach((div, index) => {
+        div.style.backgroundImage = `url(${imges[index]})`;
+    });
+    // 当前显示的图片索引
+    let index = 0;
+    // 定时器
+    let timer;
+    // 自动播放
+    autoPlay();
+    ulbsclick();
+
+    // 自动播放函数
+    function autoPlay() {
+        timer = setInterval(() => {
+            index = (index + 1) % bgimgs.length; // 循环索引
+            updateActive();
+        }, 6000);
+    }
+
+    // 左右切换
+    left.addEventListener("click", function () {
+        clearInterval(timer);
+        index = (index - 1+bgimgs.length) % bgimgs.length;
+        autoPlay();
+        updateActive();
+    })
+    right.addEventListener("click", function () {
+        clearInterval(timer);
+        index = (index + 1) % bgimgs.length;
+        autoPlay();
+        updateActive();
+    })
+    function ulbsclick(){
+        for(let i=0;i<ulbutton.length;i++){
+            ulbutton[i].addEventListener("click", function(){
+                clearInterval(timer);
+                index=i;
+                autoPlay();
+                updateActive();
+            })
+        }
+    }
+    // 更新激活状态
+    function updateActive() {
+        for (let i = 0; i < bgimgs.length; i++) {
+            bgimgs[i].classList.remove("black");
+            ulbutton[i].classList.remove("item");
+        }
+        bgimgs[index].classList.add("black");
+        ulbutton[index].classList.add("item");
+    }
+
     //返回顶部
     let top=document.getElementById("top")
 
@@ -80,4 +142,5 @@ window.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         course.scrollIntoView({ behavior: "smooth" });
     });
+
 })
